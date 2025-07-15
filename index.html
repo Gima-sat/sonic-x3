@@ -1,370 +1,373 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sonic Toothbrush X-3 — Ультразвукова зубна щітка</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sonic Toothbrush X-3 — Вибір кольору і замовлення</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-  /* Загальні стилі */
-  body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: #f7f9fc;
-    color: #222;
-  }
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 25px;
-  }
-  a.button {
-    background: linear-gradient(90deg, #007BFF 0%, #00C6FF 100%);
-    color: white;
-    padding: 18px 40px;
-    border-radius: 40px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 18px;
-    display: inline-block;
-    transition: background 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 198, 255, 0.4);
-  }
-  a.button:hover {
-    background: linear-gradient(90deg, #0056b3 0%, #0092d1 100%);
-    box-shadow: 0 6px 15px rgba(0,146,209,0.6);
-  }
-  h1, h2, h3 {
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #0a0a0a;
-  }
-  p {
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 1.55;
-    color: #444;
-    margin-bottom: 20px;
-  }
-
-  /* Hero */
-  header {
-    background: linear-gradient(135deg, #00aaff 0%, #0056b3 100%);
-    color: white;
-    padding: 80px 25px 90px;
-    text-align: center;
-    position: relative;
-  }
-  header h1 {
-    font-size: 3.2rem;
-    margin-bottom: 15px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.25);
-  }
-  header p {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-bottom: 40px;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-    text-shadow: 0 0 4px rgba(0,0,0,0.3);
-  }
-  header img {
-    max-width: 320px;
-    width: 100%;
-    border-radius: 24px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    margin: 0 auto 40px;
-    display: block;
-    transition: transform 0.5s ease;
-  }
-  header img:hover {
-    transform: scale(1.05);
-  }
-
-  /* Переваги */
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-    gap: 30px;
-    background: white;
-    padding: 60px 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgb(0 0 0 / 0.08);
-    margin: -80px auto 80px auto;
-    max-width: 1100px;
-    position: relative;
-    z-index: 10;
-  }
-  .feature-item {
-    background: #f0f9ff;
-    padding: 30px 25px;
-    border-radius: 18px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0,198,255,0.15);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-  }
-  .feature-item:hover {
-    box-shadow: 0 12px 35px rgba(0,198,255,0.3);
-    transform: translateY(-10px);
-  }
-  .feature-item span {
-    font-size: 3rem;
-    margin-bottom: 18px;
-    display: block;
-    color: #00aaff;
-  }
-  .feature-item h3 {
-    margin-bottom: 10px;
-    color: #0077cc;
-  }
-
-  /* Галерея */
-  .gallery {
-    max-width: 1100px;
-    margin: 0 auto 80px auto;
-    padding: 0 15px;
-  }
-  .gallery h2 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .gallery-slider {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    scroll-behavior: smooth;
-    padding-bottom: 15px;
-  }
-  .gallery-slider::-webkit-scrollbar {
-    height: 8px;
-  }
-  .gallery-slider::-webkit-scrollbar-thumb {
-    background: #00aaff;
-    border-radius: 4px;
-  }
-  .gallery-item {
-    flex: 0 0 auto;
-    width: 280px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgb(0 170 255 / 0.15);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    background: white;
-  }
-  .gallery-item img {
-    width: 100%;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-  .gallery-item:hover img {
-    transform: scale(1.07);
-  }
-
-  /* Як працює */
-  .how-it-works {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgb(0 0 0 / 0.08);
-    max-width: 850px;
-    margin: 0 auto 70px auto;
-    padding: 50px 40px;
-    text-align: center;
-  }
-
-  /* Комплектація */
-  .package {
-    background: white;
-    max-width: 700px;
-    margin: 0 auto 80px auto;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgb(0 0 0 / 0.08);
-    padding: 45px 40px;
-  }
-  .package ul {
-    list-style: none;
-    padding-left: 0;
-    font-size: 18px;
-  }
-  .package ul li {
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-    font-weight: 500;
-  }
-  .package ul li:last-child {
-    border-bottom: none;
-  }
-
-  /* Відгуки */
-  .reviews {
-    background: #e8f5ff;
-    padding: 70px 30px 70px 30px;
-    max-width: 900px;
-    margin: 0 auto 80px auto;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgb(0 0 0 / 0.06);
-  }
-  .reviews h2 {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  .review-item {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgb(0 170 255 / 0.1);
-    padding: 25px 30px;
-    margin-bottom: 25px;
-    font-style: italic;
-    transition: box-shadow 0.3s ease;
-  }
-  .review-item strong {
-    display: block;
-    font-style: normal;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #0077cc;
-  }
-  .review-item:hover {
-    box-shadow: 0 0 30px rgb(0 170 255 / 0.3);
-  }
-
-  /* Гарантія і доставка */
-  .guarantee {
-    max-width: 700px;
-    margin: 0 auto 80px auto;
-    text-align: center;
-    font-size: 18px;
-    color: #555;
-  }
-  .guarantee p {
-    margin-bottom: 12px;
-  }
-  .guarantee strong {
-    color: #0077cc;
-  }
-
-  /* Заклик до дії */
-  .order-section {
-    background: linear-gradient(135deg, #00aaff 0%, #0056b3 100%);
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-    border-radius: 0 0 40px 40px;
-  }
-  .order-section h2 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-  }
-  .order-section p {
-    font-size: 1.3rem;
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-  }
-  .order-section a.button {
-    background: white;
-    color: #0056b3;
-    padding: 22px 60px;
-    font-weight: 700;
-    font-size: 1.3rem;
-    box-shadow: 0 6px 20px rgba(255 255 255 / 0.8);
-  }
-  .order-section a.button:hover {
-    background: #e6e6e6;
-    color: #004080;
-  }
-
-  /* Адаптив */
-  @media (max-width: 768px) {
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #f5f9ff;
+      color: #222;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 25px 60px;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #0a0a0a;
+    }
+    p {
+      font-weight: 400;
+      font-size: 17px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+    a.button {
+      background: linear-gradient(90deg, #007BFF 0%, #00C6FF 100%);
+      color: white;
+      padding: 18px 50px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 6px 18px rgba(0,198,255,0.5);
+      transition: background 0.3s ease;
+    }
+    a.button:hover, button.button:hover {
+      background: linear-gradient(90deg, #0056b3 0%, #0092d1 100%);
+      box-shadow: 0 8px 25px rgba(0,146,209,0.7);
+    }
+    button.button {
+      width: 100%;
+      margin-top: 20px;
+    }
+    /* Hero */
+    header {
+      background: linear-gradient(135deg, #00aaff 0%, #0056b3 100%);
+      color: white;
+      padding: 70px 25px 80px;
+      text-align: center;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
     header h1 {
-      font-size: 2.4rem;
+      font-size: 3.2rem;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
     }
     header p {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 0 6px rgba(0,0,0,0.3);
     }
-    .features {
-      padding: 50px 20px;
-      margin: -50px 10px 50px 10px;
+    .hero-image {
+      width: 320px;
+      max-width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(0,170,255,0.4);
+      transition: transform 0.4s ease;
+      margin: 0 auto 35px;
     }
-    .feature-item {
-      padding: 25px 15px;
+    .hero-image:hover {
+      transform: scale(1.07);
     }
-    .how-it-works, .package, .reviews {
-      padding: 30px 20px;
-      margin: 0 10px 50px 10px;
+    /* Color selector */
+    .color-selector {
+      text-align: center;
+      margin-bottom: 50px;
     }
-    .order-section h2 {
-      font-size: 2rem;
+    .color-selector label {
+      display: inline-block;
+      cursor: pointer;
+      margin: 0 15px;
+      user-select: none;
+      font-weight: 600;
+      color: white;
+      font-size: 16px;
+      padding: 12px 20px;
+      border-radius: 35px;
+      background: rgba(255 255 255 / 0.2);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 5px rgba(255 255 255, 0.3);
     }
-    .order-section p {
-      font-size: 1.1rem;
+    .color-selector label:hover {
+      background: rgba(255 255 255 / 0.4);
+      box-shadow: 0 0 20px rgba(255 255 255, 0.7);
+    }
+    .color-selector input[type="radio"] {
+      display: none;
+    }
+    .color-selector input[type="radio"]:checked + label {
+      background: white;
+      color: #007BFF;
+      box-shadow: 0 0 25px #00aaff;
+      font-weight: 700;
+    }
+    /* Gallery */
+    .gallery {
+      max-width: 1100px;
+      margin: 0 auto 60px auto;
+      padding: 0 10px;
+    }
+    .gallery h2 {
+      text-align: center;
+      margin-bottom: 30px;
     }
     .gallery-slider {
-      gap: 15px;
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      scroll-behavior: smooth;
+      padding-bottom: 15px;
+      cursor: grab;
+    }
+    .gallery-slider:active {
+      cursor: grabbing;
+    }
+    .gallery-slider::-webkit-scrollbar {
+      height: 8px;
+    }
+    .gallery-slider::-webkit-scrollbar-thumb {
+      background: #00aaff;
+      border-radius: 4px;
     }
     .gallery-item {
-      width: 240px;
+      flex: 0 0 auto;
+      width: 280px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgb(0 170 255 / 0.15);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      background: white;
     }
-  }
-</style>
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.07);
+    }
+    /* How it works */
+    .how-it-works {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgb(0 0 0 / 0.1);
+      max-width: 850px;
+      margin: 0 auto 70px auto;
+      padding: 50px 40px;
+      text-align: center;
+    }
+    /* Package */
+    .package {
+      background: white;
+      max-width: 700px;
+      margin: 0 auto 80px auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgb(0 0 0 / 0.1);
+      padding: 45px 40px;
+    }
+    .package ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 18px;
+    }
+    .package ul li {
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+      font-weight: 500;
+    }
+    .package ul li:last-child {
+      border-bottom: none;
+    }
+    /* FAQ */
+    .faq {
+      max-width: 900px;
+      margin: 0 auto 80px auto;
+      padding: 0 20px;
+    }
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgb(0 170 255 / 0.1);
+      margin-bottom: 15px;
+      padding: 20px 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .faq-item:hover {
+      background: #e7f4ff;
+    }
+    .faq-question {
+      font-weight: 700;
+      font-size: 18px;
+      position: relative;
+      padding-right: 30px;
+    }
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 26px;
+      font-weight: 700;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-question::after {
+      content: '-';
+      transform: translateY(-50%);
+    }
+    .faq-answer {
+      margin-top: 12px;
+      font-weight: 400;
+      font-size: 16px;
+      display: none;
+      color: #555;
+      line-height: 1.5;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    /* Order form */
+    .order-form {
+      background: white;
+      max-width: 600px;
+      margin: 0 auto 100px auto;
+      padding: 50px 40px;
+      border-radius: 30px;
+      box-shadow: 0 10px 40px rgba(0,170,255,0.15);
+    }
+    .order-form h2 {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+    .form-group {
+      margin-bottom: 22px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #222;
+    }
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 14px 18px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 2px solid #ddd;
+      transition: border-color 0.3s ease;
+      outline: none;
+      box-sizing: border-box;
+    }
+    input[type="text"]:focus,
+    input[type="tel"]:focus,
+    input[type="email"]:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #00aaff;
+      box-shadow: 0 0 8px rgba(0,170,255,0.4);
+    }
+    select {
+      appearance: none;
+      background: url("data:image/svg+xml;charset=US-ASCII,%3csvg%20width%3d%2212%22%20height%3d%228%22%20viewBox%3d%220%200%2012%208%22%20xmlns%3d%22http%3a//www.w3.org/2000/svg%22%3e%3cpath%20d%3d%22M6%208L0%200h12L6%208z%22%20fill%3d%22%23007bff%22/%3e%3c/svg%3e") no-repeat right 16px center;
+      background-size: 12px 8px;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    /* Footer call to action */
+    .order-submit {
+      margin-top: 35px;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+      header p {
+        font-size: 1.1rem;
+        max-width: 90%;
+      }
+      .hero-image {
+        width: 90%;
+      }
+      .features {
+        padding: 40px 10px;
+        margin: -60px 10px 60px 10px;
+      }
+      .order-form {
+        padding: 35px 25px;
+      }
+      .gallery-slider {
+        gap: 15px;
+      }
+      .gallery-item {
+        width: 220px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <div class="container">
-    <h1>Sonic Toothbrush X-3</h1>
-    <p>Ультразвукова зубна щітка нового покоління для ідеальної чистоти та здоров'я зубів</p>
-    <img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_1.jpg" alt="Sonic Toothbrush X-3" />
-    <a href="#order" class="button">Купити зараз зі знижкою</a>
+  <h1>Sonic Toothbrush X-3</h1>
+  <p>Ультразвукова зубна щітка нового покоління для ідеальної чистоти та здоров'я зубів</p>
+  <img id="product-image" class="hero-image" src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_1.jpg" alt="Sonic Toothbrush X-3" />
+  
+  <div class="color-selector" role="radiogroup" aria-label="Вибір кольору">
+    <input type="radio" id="color-white" name="color" value="white" checked />
+    <label for="color-white" tabindex="0">Білий</label>
+
+    <input type="radio" id="color-black" name="color" value="black" />
+    <label for="color-black" tabindex="0">Чорний</label>
+
+    <input type="radio" id="color-pink" name="color" value="pink" />
+    <label for="color-pink" tabindex="0">Рожевий</label>
   </div>
 </header>
 
-<section class="features container" aria-label="Переваги">
-  <div class="feature-item">
-    <span>⚡</span>
-    <h3>31 000 ультразвукових вібрацій</h3>
-    <p>Глибоке та дбайливе очищення зубів і ясен.</p>
-  </div>
-  <div class="feature-item">
-    <span>🦷</span>
-    <h3>4 змінні насадки</h3>
-    <p>Комплект для всієї родини з різними типами щетини.</p>
-  </div>
-  <div class="feature-item">
-    <span>🔋</span>
-    <h3>До 30 днів роботи</h3>
-    <p>Потужний акумулятор без потреби частого заряджання.</p>
-  </div>
-  <div class="feature-item">
-    <span>💧</span>
-    <h3>Водонепроникність</h3>
-    <p>Можна використовувати навіть у душі, без ризику пошкоджень.</p>
-  </div>
-  <div class="feature-item">
-    <span>✨</span>
-    <h3>Безпечне відбілювання</h3>
-    <p>Білосніжна усмішка без пошкодження емалі.</p>
-  </div>
-</section>
-
 <section class="gallery" aria-label="Галерея товару">
   <h2>Галерея товару</h2>
-  <div class="gallery-slider" tabindex="0">
-    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_1.jpg" alt="Зубна щітка Sonic Toothbrush X-3 фото 1" /></div>
-    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_2.jpg" alt="Зубна щітка Sonic Toothbrush X-3 фото 2" /></div>
-    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_3.jpg" alt="Зубна щітка Sonic Toothbrush X-3 фото 3" /></div>
-    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_4.jpg" alt="Зубна щітка Sonic Toothbrush X-3 фото 4" /></div>
+  <div class="gallery-slider" tabindex="0" aria-live="polite">
+    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_1.jpg" alt="Зубна щітка біла - Sonic Toothbrush X-3" data-color="white" /></div>
+    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-black.jpg" alt="Зубна щітка чорна - Sonic Toothbrush X-3" data-color="black" /></div>
+    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/sonic-toothbrush-x-3-pink.jpg" alt="Зубна щітка рожева - Sonic Toothbrush X-3" data-color="pink" /></div>
   </div>
 </section>
 
-<section class="how-it-works">
+<section class="how-it-works" aria-label="Як працює">
   <h2>Як працює Sonic Toothbrush X-3?</h2>
   <p>Завдяки ультразвуковим коливанням (31 000 вібрацій на хвилину) щітка глибоко очищує навіть важкодоступні місця, зменшує зубний наліт і покращує здоров'я ясен.</p>
 </section>
 
-<section class="package">
+<section class="package" aria-label="Комплектація">
   <h2>Комплектація набору</h2>
   <ul>
     <li>Ультразвукова зубна щітка Sonic Toothbrush X-3</li>
@@ -374,33 +377,37 @@
   </ul>
 </section>
 
-<section class="reviews">
-  <h2>Відгуки наших клієнтів</h2>
-  <div class="review-item">
-    <strong>Олена, Київ</strong>
-    <p>“Ця щітка просто супер! Зуби стали чистішими і ясна не болять, як раніше.”</p>
+<section class="faq" aria-label="Питання і відповіді">
+  <h2>Питання та відповіді</h2>
+
+  <div class="faq-item" tabindex="0">
+    <div class="faq-question">Як довго працює батарея без заряджання?</div>
+    <div class="faq-answer">Щітка працює до 30 днів на одному заряді за умови використання 2 рази на день по 2 хвилини.</div>
   </div>
-  <div class="review-item">
-    <strong>Іван, Львів</strong>
-    <p>“Зручно користуватися, заряд тримає довго, а 4 насадки — велика економія.”</p>
+
+  <div class="faq-item" tabindex="0">
+    <div class="faq-question">Чи можна використовувати щітку у душі?</div>
+    <div class="faq-answer">Так, корпус водонепроникний, щітка без проблем витримує вологість і може використовуватися під душем.</div>
   </div>
-  <div class="review-item">
-    <strong>Марія, Одеса</strong>
-    <p>“Дуже задоволена покупкою! Відбілювання без шкоди емалі — це те, що я шукала.”</p>
+
+  <div class="faq-item" tabindex="0">
+    <div class="faq-question">Чи можна замінити насадки?</div>
+    <div class="faq-answer">У комплекті 4 змінні насадки різних типів. Їх можна замінювати для гігієни і комфорту.</div>
   </div>
+
+  <div class="faq-item" tabindex="0">
+    <div class="faq-question">Яка гарантія на товар?</div>
+    <div class="faq-answer">Гарантія 12 місяців від виробника.</div>
+  </div>
+
 </section>
 
-<section class="guarantee">
-  <p><strong>Гарантія 12 місяців</strong> на всі товари.</p>
-  <p>Швидка доставка по Україні за 1–3 дні.</p>
-  <p>Оплата при отриманні — безпечно та зручно.</p>
-</section>
-
-<section id="order" class="order-section">
-  <h2>Замовляйте Sonic Toothbrush X-3 вже сьогодні!</h2>
-  <p>Отримайте безкоштовну доставку і знижку 10% при замовленні зараз.</p>
-  <a href="https://opt-drop.com/checkout" target="_blank" class="button" rel="noopener">Купити зі знижкою</a>
-</section>
-
-</body>
-</html>
+<section class="order-form" aria-label="Форма замовлення">
+  <h2>Оформити замовлення</h2>
+  <form id="orderForm">
+    <div class="form-group">
+      <label for="name">Ім'я</label>
+      <input type="text" id="name" name="name" placeholder="Ваше ім'я" required />
+    </div>
+    <div class="form-group">
+      <label for="phone
