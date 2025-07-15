@@ -1,268 +1,406 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sonic Toothbrush X-3 — Ультразвукова зубна щітка</title>
-  <style>
-    /* Загальні стилі */
-    body {
-      margin: 0; 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9fbfc;
-      color: #333;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    a.button {
-      background: #007BFF;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
-      transition: background 0.3s ease;
-      margin-top: 15px;
-    }
-    a.button:hover {
-      background: #0056b3;
-    }
-    h1, h2, h3 {
-      margin-bottom: 15px;
-      font-weight: 700;
-      color: #222;
-    }
-    p {
-      margin-bottom: 15px;
-      font-size: 16px;
-    }
-    /* Hero секція */
-    header {
-      background: #e1f0ff;
-      padding: 60px 20px;
-      text-align: center;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sonic Toothbrush X-3 — Ультразвукова зубна щітка</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+  /* Загальні стилі */
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #f7f9fc;
+    color: #222;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+  a.button {
+    background: linear-gradient(90deg, #007BFF 0%, #00C6FF 100%);
+    color: white;
+    padding: 18px 40px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    display: inline-block;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 198, 255, 0.4);
+  }
+  a.button:hover {
+    background: linear-gradient(90deg, #0056b3 0%, #0092d1 100%);
+    box-shadow: 0 6px 15px rgba(0,146,209,0.6);
+  }
+  h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #0a0a0a;
+  }
+  p {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.55;
+    color: #444;
+    margin-bottom: 20px;
+  }
+
+  /* Hero */
+  header {
+    background: linear-gradient(135deg, #00aaff 0%, #0056b3 100%);
+    color: white;
+    padding: 80px 25px 90px;
+    text-align: center;
+    position: relative;
+  }
+  header h1 {
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.25);
+  }
+  header p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 0 4px rgba(0,0,0,0.3);
+  }
+  header img {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    margin: 0 auto 40px;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  header img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Переваги */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 30px;
+    background: white;
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgb(0 0 0 / 0.08);
+    margin: -80px auto 80px auto;
+    max-width: 1100px;
+    position: relative;
+    z-index: 10;
+  }
+  .feature-item {
+    background: #f0f9ff;
+    padding: 30px 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,198,255,0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .feature-item:hover {
+    box-shadow: 0 12px 35px rgba(0,198,255,0.3);
+    transform: translateY(-10px);
+  }
+  .feature-item span {
+    font-size: 3rem;
+    margin-bottom: 18px;
+    display: block;
+    color: #00aaff;
+  }
+  .feature-item h3 {
+    margin-bottom: 10px;
+    color: #0077cc;
+  }
+
+  /* Галерея */
+  .gallery {
+    max-width: 1100px;
+    margin: 0 auto 80px auto;
+    padding: 0 15px;
+  }
+  .gallery h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .gallery-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-behavior: smooth;
+    padding-bottom: 15px;
+  }
+  .gallery-slider::-webkit-scrollbar {
+    height: 8px;
+  }
+  .gallery-slider::-webkit-scrollbar-thumb {
+    background: #00aaff;
+    border-radius: 4px;
+  }
+  .gallery-item {
+    flex: 0 0 auto;
+    width: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgb(0 170 255 / 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background: white;
+  }
+  .gallery-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .gallery-item:hover img {
+    transform: scale(1.07);
+  }
+
+  /* Як працює */
+  .how-it-works {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgb(0 0 0 / 0.08);
+    max-width: 850px;
+    margin: 0 auto 70px auto;
+    padding: 50px 40px;
+    text-align: center;
+  }
+
+  /* Комплектація */
+  .package {
+    background: white;
+    max-width: 700px;
+    margin: 0 auto 80px auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgb(0 0 0 / 0.08);
+    padding: 45px 40px;
+  }
+  .package ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 18px;
+  }
+  .package ul li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    font-weight: 500;
+  }
+  .package ul li:last-child {
+    border-bottom: none;
+  }
+
+  /* Відгуки */
+  .reviews {
+    background: #e8f5ff;
+    padding: 70px 30px 70px 30px;
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgb(0 0 0 / 0.06);
+  }
+  .reviews h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .review-item {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgb(0 170 255 / 0.1);
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    font-style: italic;
+    transition: box-shadow 0.3s ease;
+  }
+  .review-item strong {
+    display: block;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #0077cc;
+  }
+  .review-item:hover {
+    box-shadow: 0 0 30px rgb(0 170 255 / 0.3);
+  }
+
+  /* Гарантія і доставка */
+  .guarantee {
+    max-width: 700px;
+    margin: 0 auto 80px auto;
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+  }
+  .guarantee p {
+    margin-bottom: 12px;
+  }
+  .guarantee strong {
+    color: #0077cc;
+  }
+
+  /* Заклик до дії */
+  .order-section {
+    background: linear-gradient(135deg, #00aaff 0%, #0056b3 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 0 0 40px 40px;
+  }
+  .order-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+  }
+  .order-section p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  }
+  .order-section a.button {
+    background: white;
+    color: #0056b3;
+    padding: 22px 60px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    box-shadow: 0 6px 20px rgba(255 255 255 / 0.8);
+  }
+  .order-section a.button:hover {
+    background: #e6e6e6;
+    color: #004080;
+  }
+
+  /* Адаптив */
+  @media (max-width: 768px) {
     header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
+      font-size: 2.4rem;
     }
     header p {
-      font-size: 1.3rem;
-      color: #0056b3;
-      margin-bottom: 30px;
+      font-size: 1.1rem;
     }
-    header img {
-      max-width: 280px;
-      margin: 0 auto 30px;
-      display: block;
-    }
-    /* Переваги */
     .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      justify-content: center;
-      padding: 40px 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.05);
-      margin-bottom: 40px;
+      padding: 50px 20px;
+      margin: -50px 10px 50px 10px;
     }
     .feature-item {
-      flex: 1 1 220px;
-      background: #f1f8ff;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,123,255,0.15);
-      transition: transform 0.3s ease;
+      padding: 25px 15px;
     }
-    .feature-item:hover {
-      transform: translateY(-5px);
-    }
-    .feature-item span {
-      font-size: 2rem;
-      display: block;
-      margin-bottom: 12px;
-      color: #007BFF;
-    }
-    /* Як працює */
-    .how-it-works {
-      background: #f9fbfc;
-      padding: 40px 20px;
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 50px auto;
-    }
-    /* Комплектація */
-    .package {
-      background: white;
-      padding: 40px 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.05);
-      max-width: 600px;
-      margin: 0 auto 50px auto;
-    }
-    .package ul {
-      list-style: none;
-      padding-left: 0;
-      font-size: 16px;
-    }
-    .package ul li {
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-    }
-    /* Відгуки */
-    .reviews {
-      background: #e9f4ff;
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: 0 auto 50px auto;
-      border-radius: 12px;
-    }
-    .review-item {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.07);
-      font-style: italic;
-    }
-    .review-item strong {
-      display: block;
-      margin-bottom: 8px;
-      font-style: normal;
-      color: #007BFF;
-    }
-    /* Гарантія і доставка */
-    .guarantee {
-      max-width: 700px;
-      margin: 0 auto 60px auto;
-      text-align: center;
-      font-size: 16px;
-      color: #444;
-    }
-    /* Футер і заклик */
-    .order-section {
-      background: #007BFF;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      border-radius: 12px 12px 0 0;
-      margin-bottom: 0;
+    .how-it-works, .package, .reviews {
+      padding: 30px 20px;
+      margin: 0 10px 50px 10px;
     }
     .order-section h2 {
-      margin-bottom: 15px;
       font-size: 2rem;
     }
-    .order-section a.button {
-      background: white;
-      color: #007BFF;
-      font-weight: 700;
-      padding: 20px 40px;
-      font-size: 1.2rem;
-      border-radius: 40px;
+    .order-section p {
+      font-size: 1.1rem;
     }
-    .order-section a.button:hover {
-      background: #e6e6e6;
-      color: #0056b3;
+    .gallery-slider {
+      gap: 15px;
     }
-    /* Адаптив */
-    @media (max-width: 768px) {
-      .features {
-        flex-direction: column;
-      }
+    .gallery-item {
+      width: 240px;
     }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>Sonic Toothbrush X-3</h1>
-      <p>Ультразвукова зубна щітка нового покоління для ідеальної чистоти та здоров'я зубів</p>
-      <img src="https://opt-drop.com/uploads/products/sonic-toothbrush-x3.jpg" alt="Sonic Toothbrush X-3" />
-      <a href="#order" class="button">Купити зараз зі знижкою</a>
-    </div>
-  </header>
+<header>
+  <div class="container">
+    <h1>Sonic Toothbrush X-3</h1>
+    <p>Ультразвукова зубна щітка нового покоління для ідеальної чистоти та здоров'я зубів</p>
+    <img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_1.jpg" alt="Sonic Toothbrush X-3" />
+    <a href="#order" class="button">Купити зараз зі знижкою</a>
+  </div>
+</header>
 
-  <section class="features container" aria-label="Переваги">
-    <div class="feature-item">
-      <span>⚡</span>
-      <h3>31 000 ультразвукових вібрацій</h3>
-      <p>Глибоке та дбайливе очищення зубів і ясен.</p>
-    </div>
-    <div class="feature-item">
-      <span>🦷</span>
-      <h3>4 змінні насадки</h3>
-      <p>Комплект для всієї родини з різними типами щетини.</p>
-    </div>
-    <div class="feature-item">
-      <span>🔋</span>
-      <h3>До 30 днів роботи</h3>
-      <p>Потужний акумулятор без потреби частого заряджання.</p>
-    </div>
-    <div class="feature-item">
-      <span>💧</span>
-      <h3>Водонепроникність</h3>
-      <p>Можна використовувати навіть у душі, без ризику пошкоджень.</p>
-    </div>
-    <div class="feature-item">
-      <span>✨</span>
-      <h3>Безпечне відбілювання</h3>
-      <p>Білосніжна усмішка без пошкодження емалі.</p>
-    </div>
-  </section>
+<section class="features container" aria-label="Переваги">
+  <div class="feature-item">
+    <span>⚡</span>
+    <h3>31 000 ультразвукових вібрацій</h3>
+    <p>Глибоке та дбайливе очищення зубів і ясен.</p>
+  </div>
+  <div class="feature-item">
+    <span>🦷</span>
+    <h3>4 змінні насадки</h3>
+    <p>Комплект для всієї родини з різними типами щетини.</p>
+  </div>
+  <div class="feature-item">
+    <span>🔋</span>
+    <h3>До 30 днів роботи</h3>
+    <p>Потужний акумулятор без потреби частого заряджання.</p>
+  </div>
+  <div class="feature-item">
+    <span>💧</span>
+    <h3>Водонепроникність</h3>
+    <p>Можна використовувати навіть у душі, без ризику пошкоджень.</p>
+  </div>
+  <div class="feature-item">
+    <span>✨</span>
+    <h3>Безпечне відбілювання</h3>
+    <p>Білосніжна усмішка без пошкодження емалі.</p>
+  </div>
+</section>
 
-  <section class="how-it-works" aria-label="Як працює">
-    <h2>Як працює Sonic Toothbrush X-3?</h2>
-    <p>
-      Завдяки ультразвуковим коливанням (31 000 вібрацій на хвилину) щітка глибоко очищує навіть важкодоступні місця, зменшує зубний наліт і покращує здоров'я ясен.
-    </p>
-  </section>
+<section class="gallery" aria-label="Галерея товару">
+  <h2>Галерея товару</h2>
+  <div class="gallery-slider" tabindex="0">
+    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_1.jpg" alt="Зубна щітка Sonic Toothbrush X-3 фото 1" /></div>
+    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_2.jpg" alt="Зубна щітка Sonic Toothbrush X-3 фото 2" /></div>
+    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_3.jpg" alt="Зубна щітка Sonic Toothbrush X-3 фото 3" /></div>
+    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_4.jpg" alt="Зубна щітка Sonic Toothbrush X-3 фото 4" /></div>
+  </div>
+</section>
 
-  <section class="package" aria-label="Комплектація">
-    <h2>Комплектація набору</h2>
-    <ul>
-      <li>Ультразвукова зубна щітка Sonic Toothbrush X-3</li>
-      <li>4 змінні насадки різного типу</li>
-      <li>Зарядний пристрій</li>
-      <li>Інструкція користувача</li>
-    </ul>
-  </section>
+<section class="how-it-works">
+  <h2>Як працює Sonic Toothbrush X-3?</h2>
+  <p>Завдяки ультразвуковим коливанням (31 000 вібрацій на хвилину) щітка глибоко очищує навіть важкодоступні місця, зменшує зубний наліт і покращує здоров'я ясен.</p>
+</section>
 
-  <section class="reviews" aria-label="Відгуки клієнтів">
-    <h2>Відгуки наших клієнтів</h2>
-    <div class="review-item">
-      <strong>Олена, Київ</strong>
-      <p>“Ця щітка просто супер! Зуби стали чистішими і ясна не болять, як раніше.”</p>
-    </div>
-    <div class="review-item">
-      <strong>Іван, Львів</strong>
-      <p>“Зручно користуватися, заряд тримає довго, а 4 насадки — велика економія.”</p>
-    </div>
-    <div class="review-item">
-      <strong>Марія, Одеса</strong>
-      <p>“Дуже задоволена покупкою! Відбілювання без шкоди емалі — це те, що я шукала.”</p>
-    </div>
-  </section>
+<section class="package">
+  <h2>Комплектація набору</h2>
+  <ul>
+    <li>Ультразвукова зубна щітка Sonic Toothbrush X-3</li>
+    <li>4 змінні насадки різного типу</li>
+    <li>Зарядний пристрій</li>
+    <li>Інструкція користувача</li>
+  </ul>
+</section>
 
-  <section class="guarantee container" aria-label="Гарантія та доставка">
-    <p><strong>Гарантія 12 місяців</strong> на всі товари.</p>
-    <p>Швидка доставка по Україні за 1–3 дні.</p>
-    <p>Оплата при отриманні — безпечно та зручно.</p>
-  </section>
+<section class="reviews">
+  <h2>Відгуки наших клієнтів</h2>
+  <div class="review-item">
+    <strong>Олена, Київ</strong>
+    <p>“Ця щітка просто супер! Зуби стали чистішими і ясна не болять, як раніше.”</p>
+  </div>
+  <div class="review-item">
+    <strong>Іван, Львів</strong>
+    <p>“Зручно користуватися, заряд тримає довго, а 4 насадки — велика економія.”</p>
+  </div>
+  <div class="review-item">
+    <strong>Марія, Одеса</strong>
+    <p>“Дуже задоволена покупкою! Відбілювання без шкоди емалі — це те, що я шукала.”</p>
+  </div>
+</section>
 
-  <section id="order" class="order-section" aria-label="Заклик до дії">
-    <h2>Замовляйте Sonic Toothbrush X-3 вже сьогодні!</h2>
-    <p>Отримайте безкоштовну доставку і знижку 10% при замовленні зараз.</p>
-    <a href="https://opt-drop.com/checkout" target="_blank" class="button" rel="noopener">Купити зі знижкою</a>
-  </section>
+<section class="guarantee">
+  <p><strong>Гарантія 12 місяців</strong> на всі товари.</p>
+  <p>Швидка доставка по Україні за 1–3 дні.</p>
+  <p>Оплата при отриманні — безпечно та зручно.</p>
+</section>
+
+<section id="order" class="order-section">
+  <h2>Замовляйте Sonic Toothbrush X-3 вже сьогодні!</h2>
+  <p>Отримайте безкоштовну доставку і знижку 10% при замовленні зараз.</p>
+  <a href="https://opt-drop.com/checkout" target="_blank" class="button" rel="noopener">Купити зі знижкою</a>
+</section>
 
 </body>
 </html>
