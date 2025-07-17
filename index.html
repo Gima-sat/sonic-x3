@@ -3,334 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sonic Toothbrush X-3 — Вибір кольору і замовлення</title>
+  <title>Sonic Toothbrush X-3</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
     body {
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: #f5f9ff;
+      background: #f8f8f8;
       color: #222;
-      line-height: 1.6;
     }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 25px 60px;
-    }
-    h1, h2, h3 {
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: #0a0a0a;
-    }
-    p {
-      font-weight: 400;
-      font-size: 17px;
-      color: #444;
-      margin-bottom: 20px;
-    }
-    a.button {
-      background: linear-gradient(90deg, #007BFF 0%, #00C6FF 100%);
-      color: white;
-      padding: 18px 50px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 18px;
-      display: inline-block;
-      cursor: pointer;
-      border: none;
-      box-shadow: 0 6px 18px rgba(0,198,255,0.5);
-      transition: background 0.3s ease;
-    }
-    a.button:hover, button.button:hover {
-      background: linear-gradient(90deg, #0056b3 0%, #0092d1 100%);
-      box-shadow: 0 8px 25px rgba(0,146,209,0.7);
-    }
-    button.button {
-      width: 100%;
-      margin-top: 20px;
-    }
-    /* Hero */
     header {
-      background: linear-gradient(135deg, #00aaff 0%, #0056b3 100%);
-      color: white;
-      padding: 70px 25px 80px;
+      background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+      padding: 40px 20px;
       text-align: center;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
     }
     header h1 {
-      font-size: 3.2rem;
-      margin-bottom: 12px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+      font-size: 2.5em;
+      margin-bottom: 10px;
     }
     header p {
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin-bottom: 40px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      text-shadow: 0 0 6px rgba(0,0,0,0.3);
+      font-size: 1.2em;
     }
     .hero-image {
-      width: 320px;
-      max-width: 100%;
-      border-radius: 24px;
-      box-shadow: 0 18px 50px rgba(0,170,255,0.4);
-      transition: transform 0.4s ease;
-      margin: 0 auto 35px;
+      max-width: 300px;
+      margin-top: 20px;
     }
-    .hero-image:hover {
-      transform: scale(1.07);
-    }
-    /* Color selector */
     .color-selector {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .color-selector label {
-      display: inline-block;
-      cursor: pointer;
-      margin: 0 15px;
-      user-select: none;
-      font-weight: 600;
-      color: white;
-      font-size: 16px;
-      padding: 12px 20px;
-      border-radius: 35px;
-      background: rgba(255 255 255 / 0.2);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 5px rgba(255 255 255, 0.3);
-    }
-    .color-selector label:hover {
-      background: rgba(255 255 255 / 0.4);
-      box-shadow: 0 0 20px rgba(255 255 255, 0.7);
+      margin-top: 20px;
     }
     .color-selector input[type="radio"] {
       display: none;
     }
-    .color-selector input[type="radio"]:checked + label {
-      background: white;
-      color: #007BFF;
-      box-shadow: 0 0 25px #00aaff;
-      font-weight: 700;
-    }
-    /* Gallery */
-    .gallery {
-      max-width: 1100px;
-      margin: 0 auto 60px auto;
-      padding: 0 10px;
-    }
-    .gallery h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .gallery-slider {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      scroll-behavior: smooth;
-      padding-bottom: 15px;
-      cursor: grab;
-    }
-    .gallery-slider:active {
-      cursor: grabbing;
-    }
-    .gallery-slider::-webkit-scrollbar {
-      height: 8px;
-    }
-    .gallery-slider::-webkit-scrollbar-thumb {
-      background: #00aaff;
-      border-radius: 4px;
-    }
-    .gallery-item {
-      flex: 0 0 auto;
-      width: 280px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgb(0 170 255 / 0.15);
+    .color-selector label {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+      margin: 5px;
       cursor: pointer;
-      transition: transform 0.3s ease;
-      background: white;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .color-selector input[type="radio"]:checked + label {
+      background: #222;
+      color: white;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
     }
     .gallery-item img {
       width: 100%;
+      max-width: 300px;
+      margin: 10px auto;
       display: block;
-      transition: transform 0.3s ease;
-    }
-    .gallery-item:hover img {
-      transform: scale(1.07);
-    }
-    /* How it works */
-    .how-it-works {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgb(0 0 0 / 0.1);
-      max-width: 850px;
-      margin: 0 auto 70px auto;
-      padding: 50px 40px;
-      text-align: center;
-    }
-    /* Package */
-    .package {
-      background: white;
-      max-width: 700px;
-      margin: 0 auto 80px auto;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgb(0 0 0 / 0.1);
-      padding: 45px 40px;
-    }
-    .package ul {
-      list-style: none;
-      padding-left: 0;
-      font-size: 18px;
-    }
-    .package ul li {
-      padding: 15px 0;
-      border-bottom: 1px solid #eee;
-      font-weight: 500;
-    }
-    .package ul li:last-child {
-      border-bottom: none;
-    }
-    /* FAQ */
-    .faq {
-      max-width: 900px;
-      margin: 0 auto 80px auto;
-      padding: 0 20px;
-    }
-    .faq h2 {
-      text-align: center;
-      margin-bottom: 40px;
+      border-radius: 8px;
     }
     .faq-item {
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgb(0 170 255 / 0.1);
-      margin-bottom: 15px;
-      padding: 20px 30px;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .faq-item:hover {
-      background: #e7f4ff;
-    }
-    .faq-question {
-      font-weight: 700;
-      font-size: 18px;
-      position: relative;
-      padding-right: 30px;
-    }
-    .faq-question::after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 26px;
-      font-weight: 700;
-      transition: transform 0.3s ease;
-    }
-    .faq-item.active .faq-question::after {
-      content: '-';
-      transform: translateY(-50%);
+      transition: 0.3s;
     }
     .faq-answer {
-      margin-top: 12px;
-      font-weight: 400;
-      font-size: 16px;
       display: none;
-      color: #555;
-      line-height: 1.5;
+      margin-top: 10px;
+      font-size: 0.95em;
     }
     .faq-item.active .faq-answer {
       display: block;
     }
-    /* Order form */
     .order-form {
       background: white;
-      max-width: 600px;
-      margin: 0 auto 100px auto;
-      padding: 50px 40px;
-      border-radius: 30px;
-      box-shadow: 0 10px 40px rgba(0,170,255,0.15);
-    }
-    .order-form h2 {
-      text-align: center;
-      margin-bottom: 35px;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     .form-group {
-      margin-bottom: 22px;
+      margin-bottom: 15px;
     }
     label {
       display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      font-size: 16px;
-      color: #222;
+      font-weight: bold;
+      margin-bottom: 5px;
     }
-    input[type="text"],
-    input[type="tel"],
-    input[type="email"],
-    textarea,
-    select {
+    input, select, textarea {
       width: 100%;
-      padding: 14px 18px;
-      font-size: 16px;
-      border-radius: 10px;
-      border: 2px solid #ddd;
-      transition: border-color 0.3s ease;
-      outline: none;
-      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
-    input[type="text"]:focus,
-    input[type="tel"]:focus,
-    input[type="email"]:focus,
-    textarea:focus,
-    select:focus {
-      border-color: #00aaff;
-      box-shadow: 0 0 8px rgba(0,170,255,0.4);
-    }
-    select {
-      appearance: none;
-      background: url("data:image/svg+xml;charset=US-ASCII,%3csvg%20width%3d%2212%22%20height%3d%228%22%20viewBox%3d%220%200%2012%208%22%20xmlns%3d%22http%3a//www.w3.org/2000/svg%22%3e%3cpath%20d%3d%22M6%208L0%200h12L6%208z%22%20fill%3d%22%23007bff%22/%3e%3c/svg%3e") no-repeat right 16px center;
-      background-size: 12px 8px;
-      padding-right: 40px;
+    .button {
+      background: #1e90ff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s;
     }
-    /* Footer call to action */
-    .order-submit {
-      margin-top: 35px;
-    }
-    /* Responsive */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.4rem;
-      }
-      header p {
-        font-size: 1.1rem;
-        max-width: 90%;
-      }
-      .hero-image {
-        width: 90%;
-      }
-      .features {
-        padding: 40px 10px;
-        margin: -60px 10px 60px 10px;
-      }
-      .order-form {
-        padding: 35px 25px;
-      }
-      .gallery-slider {
-        gap: 15px;
-      }
-      .gallery-item {
-        width: 220px;
-      }
+    .button:hover {
+      background: #0d75d8;
     }
   </style>
 </head>
@@ -338,76 +117,92 @@
 
 <header>
   <h1>Sonic Toothbrush X-3</h1>
-  <p>Ультразвукова зубна щітка нового покоління для ідеальної чистоти та здоров'я зубів</p>
-  <img id="product-image" class="hero-image" src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_1.jpg" alt="Sonic Toothbrush X-3" />
-  
-  <div class="color-selector" role="radiogroup" aria-label="Вибір кольору">
-    <input type="radio" id="color-white" name="color" value="white" checked />
-    <label for="color-white" tabindex="0">Білий</label>
-
-    <input type="radio" id="color-black" name="color" value="black" />
-    <label for="color-black" tabindex="0">Чорний</label>
-
-    <input type="radio" id="color-pink" name="color" value="pink" />
-    <label for="color-pink" tabindex="0">Рожевий</label>
+  <p>Ультразвукова щітка для ідеальної усмішки</p>
+  <img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_1.jpg" class="hero-image" alt="Sonic Toothbrush" />
+  <div class="color-selector">
+    <input type="radio" id="white" name="color" value="Білий" checked>
+    <label for="white">Білий</label>
+    <input type="radio" id="black" name="color" value="Чорний">
+    <label for="black">Чорний</label>
+    <input type="radio" id="pink" name="color" value="Рожевий">
+    <label for="pink">Рожевий</label>
   </div>
 </header>
 
-<section class="gallery" aria-label="Галерея товару">
-  <h2>Галерея товару</h2>
-  <div class="gallery-slider" tabindex="0" aria-live="polite">
-    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-ultrazvukovaia-akkumuliatornaia-4-smennye-nasadki-v-komplekte_1.jpg" alt="Зубна щітка біла - Sonic Toothbrush X-3" data-color="white" /></div>
-    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-black.jpg" alt="Зубна щітка чорна - Sonic Toothbrush X-3" data-color="black" /></div>
-    <div class="gallery-item"><img src="https://opt-drop.com/uploads/products/sonic-toothbrush-x-3-pink.jpg" alt="Зубна щітка рожева - Sonic Toothbrush X-3" data-color="pink" /></div>
+<section>
+  <h2>Фото щіток</h2>
+  <div class="gallery-item">
+    <img src="https://opt-drop.com/uploads/products/elektriceskaia-zubnaia-shhetka-sonic-toothbrush-x-3-black.jpg" alt="Black brush">
+    <img src="https://opt-drop.com/uploads/products/sonic-toothbrush-x-3-pink.jpg" alt="Pink brush">
   </div>
 </section>
 
-<section class="how-it-works" aria-label="Як працює">
-  <h2>Як працює Sonic Toothbrush X-3?</h2>
-  <p>Завдяки ультразвуковим коливанням (31 000 вібрацій на хвилину) щітка глибоко очищує навіть важкодоступні місця, зменшує зубний наліт і покращує здоров'я ясен.</p>
+<section>
+  <h2>FAQ — Питання та відповіді</h2>
+  <div class="faq-item">
+    <div class="faq-question">Чи є гарантія?</div>
+    <div class="faq-answer">Так, гарантія 12 місяців.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Яка комплектація?</div>
+    <div class="faq-answer">Щітка, 4 насадки, зарядка, інструкція.</div>
+  </div>
 </section>
 
-<section class="package" aria-label="Комплектація">
-  <h2>Комплектація набору</h2>
-  <ul>
-    <li>Ультразвукова зубна щітка Sonic Toothbrush X-3</li>
-    <li>4 змінні насадки різного типу</li>
-    <li>Зарядний пристрій</li>
-    <li>Інструкція користувача</li>
-  </ul>
-</section>
-
-<section class="faq" aria-label="Питання і відповіді">
-  <h2>Питання та відповіді</h2>
-
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">Як довго працює батарея без заряджання?</div>
-    <div class="faq-answer">Щітка працює до 30 днів на одному заряді за умови використання 2 рази на день по 2 хвилини.</div>
-  </div>
-
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">Чи можна використовувати щітку у душі?</div>
-    <div class="faq-answer">Так, корпус водонепроникний, щітка без проблем витримує вологість і може використовуватися під душем.</div>
-  </div>
-
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">Чи можна замінити насадки?</div>
-    <div class="faq-answer">У комплекті 4 змінні насадки різних типів. Їх можна замінювати для гігієни і комфорту.</div>
-  </div>
-
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">Яка гарантія на товар?</div>
-    <div class="faq-answer">Гарантія 12 місяців від виробника.</div>
-  </div>
-
-</section>
-
-<section class="order-form" aria-label="Форма замовлення">
-  <h2>Оформити замовлення</h2>
-  <form id="orderForm">
+<section>
+  <h2>Залишити замовлення</h2>
+  <form id="order-form">
     <div class="form-group">
-      <label for="name">Ім'я</label>
-      <input type="text" id="name" name="name" placeholder="Ваше ім'я" required />
+      <label for="name">Ім’я</label>
+      <input type="text" id="name" required>
     </div>
     <div class="form-group">
-      <label for="phone
+      <label for="phone">Телефон</label>
+      <input type="tel" id="phone" required>
+    </div>
+    <div class="form-group">
+      <label for="color">Оберіть колір</label>
+      <select id="color">
+        <option value="Білий">Білий</option>
+        <option value="Чорний">Чорний</option>
+        <option value="Рожевий">Рожевий</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="comment">Коментар</label>
+      <textarea id="comment"></textarea>
+    </div>
+    <button type="submit" class="button">Надіслати</button>
+  </form>
+</section>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll(".faq-item").forEach(item => {
+    item.addEventListener("click", () => item.classList.toggle("active"));
+  });
+
+  // Telegram form submission
+  document.getElementById("order-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const color = document.getElementById("color").value;
+    const comment = document.getElementById("comment").value;
+
+    const message = `🦷 НОВЕ ЗАМОВЛЕННЯ:%0A👤 Ім’я: ${name}%0A📞 Телефон: ${phone}%0A🎨 Колір: ${color}%0A💬 Коментар: ${comment}`;
+
+    fetch(`https://api.telegram.org/botYOUR_BOT_TOKEN/sendMessage?chat_id=YOUR_CHAT_ID&text=${message}`)
+      .then(res => {
+        if (res.ok) {
+          alert("Замовлення успішно надіслане!");
+          document.getElementById("order-form").reset();
+        } else {
+          alert("Помилка відправки.");
+        }
+      });
+  });
+</script>
+
+</body>
+</html>
